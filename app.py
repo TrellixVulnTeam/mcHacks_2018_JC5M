@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, request, url_for, redirect, ses
 from forms.sign_in import SignInForm
 
 app = Flask(__name__)
+app.config.from_object('config')
 
 
 @app.route('/')
