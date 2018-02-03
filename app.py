@@ -38,6 +38,31 @@ def voter():
 """
     return render_template('main_page.html')
 
+@app.route('/upload_photo', methods = ['GET', 'POST'])
+def upload_photo():
+    """
+    from flask import Flask, abort, make_response, request, url_for
+    from pymongo import MongoClient
+    from werkzeug.utils import secure_filename
+    import os
+
+    app = Flask(__name__)
+    client = MongoClient(host='localhost', port=27017)
+    db = client.data
+
+
+    @app.route('/upload_photos/', methods = ["GET", "POST"])
+    def upload_photo():
+        if request.method == "POST":
+            # Get photo from request
+            new_photo = request.args.get('upload_file')
+            # Save file
+            filename = secure_filename(new_photo)
+            new_photo.save(os.path.join(app.config['Photos'], filename))
+
+
+    """
+
 
 
 if __name__ == '__main__':
