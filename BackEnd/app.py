@@ -12,7 +12,7 @@ def index():
 def voter():
     """error = ''
     try:
-        if request.method== "POST":
+        if request.method== "POST":fdsafdasds
             attempted_username = request.form['username']
             attempted_password= request.form['psw']
             attempted_email = request.form['email']
