@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Register</title>
+
+<form action="" method="POST" id="signupform" style="border:1px solid #ccc">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link href="styles/main.css" rel="stylesheet" type="text/css">
+
+<body>
+
+    <div class="container">
+        <div class = "NavBar">
+            <ul>
+                <li style="float:left"><a href="index.html">Home</a></li>
+                <li style="float:left"><a href="#">Categories</a></li>
+
+                <li style="float:right"><a href="register.html">Register</a></li>
+                <li style="float:right"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+
+        <h1>Register an Account</h1>
+
+        <img src='placeholder.jpg'>
+        <br>
+
+        <label><b>Email</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required value="{{request.form.username}}">
+        <br>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required value="{{request.form.password}}">
+        <br>
+
+        <label><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <br>
+        <br>
+
+        <label>
+            <input type="checkbox" checked="checked" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+        <div class="clearfix">
+            <button type="button" class="signupbtn">Sign up</button>
+        </div>
+
+    </div>
+
+</form>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</body>
+</html>
