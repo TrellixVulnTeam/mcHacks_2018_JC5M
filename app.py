@@ -11,6 +11,7 @@ def index():
     #return render_template('main_page.html', username=session['username'] if 'username' in session else None)
 
 @app.route('/sign_in/', methods=['GET', 'POST'])
+#SIGN-UP
 def sign_in():
     sign_in_form = SignInForm(request.form)
     print(request.method)
@@ -22,11 +23,39 @@ def sign_in():
             session['username']= user.username
             session['email']= user.email
             return redirect(url_for('index'))
+
         else:
             flash('username already exists')
             return render_template('sign_in.html', form=sign_in_form)
     return render_template('sign_in.html', form=sign_in_form)
 
+@app.route('/login/', methods = ['GET','POST'])
+def login_page():
+    error = ''
+    try:
+        if request.method== "POST":
+            attempted_username = request.form['username']
+            attempted_password= request.form['psw']
+            attempted_email = request.form['email']
+
+            flash(attempted_username)
+            flash(attempted_password)
+
+            if  db.users.find_one({u'username':"{}".format(attempted_username),u'password':attempted_password}):
+                flash("found")
+                session['username'] = attempted_username
+                session['email'] = attempted_email
+                return redirect(url_for('index'))
+            else:
+                error = "Not Valid Credentials. Try again."
+
+        return render_template("login.html", error = error)
+
+    except Exception as e:
+        flash(e)
+        return render_template("login.html", error= error)
+
+    return render_template('login.html')
 
 """
 @app.route('/upload_photo', methods = ['GET', 'POST'])
