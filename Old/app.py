@@ -12,14 +12,15 @@ app.config.from_object('config')
 #db= Database().db
 #app.config mongo
 ###########3
-#mongo=pymongo(app)
+#mongo=pymongo(ap#p)
 
 #print(db.collection_names())
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
    #all_requests = db.Tasks.find({})
-    return render_template('index.html', username = session['username'] if 'username' in session else None)
+   print
+    return render_template('index.html', username = session['username'] if 'username' in session else None, requests=all_requests)
 
 @app.route('/sign_in/', methods=['GET', 'POST'])
 def sign_in():

@@ -1,7 +1,15 @@
 from random import random
+from forms.images import  images
 
 class User():
     def __init__(self, email, username, password, images):
+        """
+
+        :param email: str
+        :param username: str
+        :param password: str
+        :param images: list
+        """
         self.email = email
         self.username = username
         self.password = password
@@ -11,8 +19,8 @@ class User():
         return {
     'email': self.email,
     'username': self.username,
-    'password': self.password
-    'images': self.images
+    'password': self.password,
+    'images': self.images,
     }
 
     

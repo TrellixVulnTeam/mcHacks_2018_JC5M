@@ -17,7 +17,7 @@ db= Database().db
 ###########3
 #mongo=pymongo(app)##
 
-print(db.collection_names())
+#print(db.collection_names())
 
 
 
@@ -32,42 +32,24 @@ print(db.collection_names())
 ##
 
 
-
+#
 @app.route('/')
 def index():
     return render_template('index.html')
     #return render_template('main_page.html', username=session['username'] if 'username' in session else None)
 
 
-"""
+
 @app.route('/view_results/', methods = ['GET','POST'])
 def view_results():
-    error = ''
-    try:
-        if request.method== "##POST":fdsafdasds:
-            attempted_username = request.form['username']
-            attempted_password= request.form['psw']
-            attempted_email = request.form['email']
-#
-            flash(attempted_username)
-            flash(attempted_p##assword)
 
-            if  db.users.find_one({u'username':"{}".format(attempted_username),u'password':attempted_password}):
-                flash("found")
-                session['username'] = attempted_username
-                session['email'] = attempted_email
-                return redirect(url_for('index'))
-            else:
-                error = "Not Valid Credentials. Try again."
+    all_requests = db.users.find_one({"username":"nba"})
+    print(all_requests['images'])
+    return render_template('view_results.html', username = session['username'] if 'username' in session else None, requests=all_requests)
 
-        return render_template("l#####fdsafdaogin.html", error = error)
 
-    except Exception as e:
-        flash(e)
-        return render_template("login.html", error= error)
+im=['fdsfads','fdsafdsa','fsdafdas']
 
-    return render_template('view_results.html')
-"""
 @app.route('/sign_in/', methods=['GET', 'POST'])
 #SIGN-UP
 def sign_in():
@@ -77,11 +59,11 @@ def sign_in():
         #if request.method == "POST" and sign_in_form.validate_on_submit():
         print('fdsafa')
         if not db.users.find_one({'username': sign_in_form.username.data}):
-            user = User(sign_in_form.email.data, sign_in_form.username.data, sign_in_form.password.data,"fds")
+            user = User(sign_in_form.email.data, sign_in_form.username.data, sign_in_form.password.data,im)
             print(user.username)
             db.users.insert_one(user.json())
-            #session['username']= user.username
-            #session['email']= user.email
+            session['username']= user.username
+            session['email']= user.email
             return render_template('view_results.html')
             #return redirect(url_for('index'))
 
@@ -106,8 +88,8 @@ def login_page():
 
             if  db.users.find_one({u'username':"{}".format(attempted_username),u'password':attempted_password}):
                 flash("found")
-                #session['username'] = attempted_username
-                #session['email'] = attempted_email
+                session['username'] = attempted_username
+                session['email'] = attempted_email
                 return redirect(url_for('view_results'))
             else:
                 error = "Not Valid Credentials. Try again."
