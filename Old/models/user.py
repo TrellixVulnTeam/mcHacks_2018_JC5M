@@ -1,7 +1,7 @@
 from random import random
 
 class User():
-    def __init__(self, email, username, password):
+    def __init__(self, email, username, password, image):
         self.email = email
         self.username = username
         self.password = password
@@ -10,7 +10,8 @@ class User():
         return {
     'email': self.email,
     'username': self.username,
-    'password': self.password
+    'password': self.password,
+    'image': self.image
     }
 
     

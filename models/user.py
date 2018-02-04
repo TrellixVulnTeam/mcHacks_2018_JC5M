@@ -1,16 +1,18 @@
 from random import random
 
 class User():
-    def __init__(self, email, username, password):
+    def __init__(self, email, username, password, images):
         self.email = email
         self.username = username
         self.password = password
+        self.images = images
         
     def json(self):
         return {
     'email': self.email,
     'username': self.username,
     'password': self.password
+    'images': self.images
     }
 
     

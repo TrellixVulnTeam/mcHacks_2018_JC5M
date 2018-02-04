@@ -38,12 +38,13 @@ def index():
     return render_template('index.html')
     #return render_template('main_page.html', username=session['username'] if 'username' in session else None)
 
+
+"""
 @app.route('/view_results/', methods = ['GET','POST'])
 def view_results():
-    """
     error = ''
     try:
-        if request.method== "##POST":fdsafdasds
+        if request.method== "##POST":fdsafdasds:
             attempted_username = request.form['username']
             attempted_password= request.form['psw']
             attempted_email = request.form['email']
@@ -65,9 +66,8 @@ def view_results():
         flash(e)
         return render_template("login.html", error= error)
 
-"""
     return render_template('view_results.html')
-
+"""
 @app.route('/sign_in/', methods=['GET', 'POST'])
 #SIGN-UP
 def sign_in():
@@ -77,7 +77,7 @@ def sign_in():
         #if request.method == "POST" and sign_in_form.validate_on_submit():
         print('fdsafa')
         if not db.users.find_one({'username': sign_in_form.username.data}):
-            user = User(sign_in_form.email.data, sign_in_form.username.data, sign_in_form.password.data)
+            user = User(sign_in_form.email.data, sign_in_form.username.data, sign_in_form.password.data,"fds")
             print(user.username)
             db.users.insert_one(user.json())
             #session['username']= user.username

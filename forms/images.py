@@ -10,3 +10,5 @@ class images:
 
     def getVotes(self):
         return self.votes
+
+    #associate user with image id
