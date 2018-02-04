@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" >
-
-<head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link href="styles/main.css" rel="stylesheet" type="text/css">
-
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-      <style>
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-      body {
+body {
   font-family: "Open Sans", sans-serif;
   height: 100vh;
   background: url(img/bridge.jpg) 50% fixed;
@@ -176,57 +156,3 @@ footer a, footer a:link {
   color: #fff;
   text-decoration: none;
 }
-
-    </style>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
-</head>
-
-<body>
-
-          <div class = "NavBar">
-            <ul>
-                <li style="float:left"><a href="index.html">Home</a></li>
-
-                <li style="float:right"><a href="register.html">Register</a></li>
-                <li style="float:right"><a href="login.html">Login</a></li>
-            </ul>
-        </div>
-
-  <div class="wrapper">
-  <form class="login" action="" method="POST" id="signupform" style="border:1px solid #ccc">
-    <p class="title">Register an Account</p>
-    <input type="text" placeholder="Username" name="username" required value="{{request.form.username}}" autofocus/>
-    <!--<i class="fa fa-user"></i>-->
-    <input type="password" placeholder="Password" name="psw" required value="{{request.form.password}}" />
-    <i class="fa fa-key"></i>
-    <button>
-      <i class="spinner"></i>
-      <span class="state">Sign up</span>
-    </button>
-  </form>
-  </p>
-</div>
-
-                  {{ form.email(**{'class': 'form-control', 'placeholder': 'Email Address', 'required': '', 'autofocus':''}) }}
-
-         {{ form.username(**{'class': 'form-control', 'placeholder': 'Username', 'required': ''}) }}
-
-        {{ form.password(**{'class': 'form-control', 'placeholder': 'Password', 'required': ''}) }}
-
-         {{ form.confirm(**{'class': 'form-control', 'placeholder': 'Confirm Password', 'required': ''}) }}
-        <label class="checkbox">
-         {{ form.accept_rules(**{'id': 'accept_rules'}) }} I accept the site rules
-        </label>
-        {{ form.submit(**{'class': 'btn btn-lg btn-primary btn-block input-sm', 'type': 'submit'}) }}
-
-
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script  src="js/index.js"></script>
-
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-</body>
-
-</html>
