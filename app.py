@@ -102,7 +102,7 @@ def login_page():
 
             flash(attempted_username)
             flash(attempted_password)
-
+#
 
             if  db.users.find_one({u'username':"{}".format(attempted_username),u'password':attempted_password}):
                 flash("found")
