@@ -26,6 +26,8 @@ def sign_in():
             flash('username already exists')
             return render_template('sign_in.html', form=sign_in_form)
     return render_template('sign_in.html', form=sign_in_form)
+
+
 """
 @app.route('/upload_photo', methods = ['GET', 'POST'])
 def upload_photo():
