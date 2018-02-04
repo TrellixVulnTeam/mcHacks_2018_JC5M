@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<title>Login</title>
+<title>Register</title>
 
-<form action="" method="POST" id="loginform" style="border:1px solid #ccc">
+<form action="" method="POST" id="signupform" style="border:1px solid #ccc">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -11,6 +11,7 @@
 <link href="styles/main.css" rel="stylesheet" type="text/css">
 
 <body>
+
     <div class="container">
         <div class = "NavBar">
             <ul>
@@ -22,7 +23,9 @@
             </ul>
         </div>
 
-        <h1>Login</h1>
+        <h1>Register an Account</h1>
+
+        <img src='placeholder.jpg'>
         <br>
 
         <label><b>Email</b></label>
@@ -42,16 +45,12 @@
             <input type="checkbox" checked="checked" style="margin-bottom:15px"> Remember me
         </label>
 
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
         <div class="clearfix">
-            <button type="submit" class="signupbtn">Log in</button>
-
-            <p> Don't have an account? </p>
-
-            <button type="button" class="signupbtn">Sign up here!</button>
-
+            <button type="button" class="signupbtn">Sign up</button>
         </div>
 
-          <p>{{error}}</p>
     </div>
 
 </form>
