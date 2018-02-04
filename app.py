@@ -15,7 +15,7 @@ app.config.from_object('config')
 db= Database().db
 #app.config mongo
 ###########3
-#mongo=pymongo(app)
+#mongo=pymongo(app)##
 
 print(db.collection_names())
 
