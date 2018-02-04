@@ -5,13 +5,15 @@ from werkzeug.utils import secure_filename
 import os
 
 app = Flask(__name__)
-client = MongoClient(host='localhost', port=27017)
+client = MongoClient(host='localhost', port=63342)
 db = client.data
 
-
-app = Flask(__name__)
-app = Flask(__name__)
 app.config.from_object('config')
+
+
+
+
+
 
 
 @app.route('/')
@@ -54,14 +56,16 @@ def view_results():
 def sign_in():
     sign_in_form = SignInForm(request.form)
     print(request.method)
-    if request.method == "POST" and sign_in_form.validate_on_submit():
+    if request.method == "POST":
+        #if request.method == "POST" and sign_in_form.validate_on_submit():
         print('fdsafa')
         if not db.users.find_one({'username': sign_in_form.username.data}):
             user = User(sign_in_form.email.data, sign_in_form.username.data, sign_in_form.password.data)
             db.users.insert_one(user.json())
             session['username']= user.username
             session['email']= user.email
-            return redirect(url_for('index'))
+            return render_template('view_results.html')
+            #return redirect(url_for('index'))
 
         else:
             flash('username already exists')
