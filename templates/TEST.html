@@ -44,8 +44,28 @@
 }
 </style>
 
+<head>
+    <script src="js/test.js"></script>
+</head>
+
+<body>
     <div class="container darken-pseudo darken-with-text">
         <p>Hello world!</p>
+    </div>
+
+    <h1>Tester</h1>
+
+    <button type="button" onclick="revealMessage()">
+        Clicky
+    </button>
+
+    <div id="hiddenMessage" style="display: none">
+        <p>
+            Spooky scary skeletons
+        </p>
+        <button type="button" id="countDownButton" onclick="countDown()">
+            10
+        </button>
     </div>
 
     <div class = "NavBar">
@@ -57,5 +77,8 @@
             <li style="float:right"><a href="#">Login</a></li>
         </ul>
     </div>
+
+</body>
+
 
 </html>

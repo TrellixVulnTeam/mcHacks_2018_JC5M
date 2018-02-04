@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link href="styles/main.css" rel="stylesheet" type="text/css">
 
+<head>
+    <script src="js/main.js"></script>
+</head>
+
 <body>
 
     <p>
@@ -18,12 +22,19 @@
 
     <p>
         <h3>Image preview:</h3>
-        aaa
+
+        <div id="img1">
+            <img src=img/drugBarney.png>
+            <button onclick="undoUploadImg('img1')">x</button>
+        </div>
+
     </p>
 
     <p>
-        <button type="button">Start Vote</button>
+        <button type="button" onclick="displayVoteStartedMsg()">Start Vote</button>
     </p>
+
+    <div id="msgVoteStarted" style="display: none" >Vote started!</div>
 
     <div class = "NavBar">
         <ul>

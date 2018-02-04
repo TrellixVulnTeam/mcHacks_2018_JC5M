@@ -119,3 +119,21 @@ p
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+figure
+{
+    display: inline-block;
+}
+
+figure figcaption
+{
+    text-align: center;
+}
+
+.voteImg
+{
+    float: right;
+    margin-right: 50px;
+    padding: 5px 30px;
+    background: #333;
+}

@@ -9,37 +9,76 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link href="styles/main.css" rel="stylesheet" type="text/css">
 
+<head>
+    <script src="js/main.js"></script>
+</head>
+
 <body>
 
     <h1><strong>Professional</strong></h1>
 
-    <p>
-        <h3>User1:</h3>
+       <div>
+            <div id="user1photos">
+                <h3>User1:</h3>
 
-        <img src=img/hideThePain1.jpg>
-        <img src=img/hideThePain2.jpg><br>
+                <figure>
+                    <img src="img/hideThePain1.jpg" alt="hideThePain1">
+                    <figcaption>hideThePain1</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/hideThePain2.jpg" alt="hideThePain2">
+                    <figcaption>hideThePain2</figcaption>
+                </figure><br>
 
-        <select>
-            <option style="background-image:url(hideThePain1.jpg);">HideThePain1</option>
-            <option style="background-image:url(hideThePain2.jpg);">HideThePain2</option>
-        </select>
 
-        <button type="button">Submit Vote</button>
-    </p>
+                <div class="voteImg">
+                    <select>
+                        <option>hideThePain1</option>
+                        <option>hideThePain2</option>
+                    </select>
 
-    <p>
-        <h3>User2:</h3>
+                    <button type="button" onclick="submitVote('user1')">Submit Vote</button>
+                </div><br><br>
 
-        <img src=img/hideThePain2.jpg>
-        <img src=img/hideThePain1.jpg><br>
+            </div>
 
-        <select>
-            <option style="background-image:url(hideThePain2.jpg);">HideThePain2</option>
-            <option style="background-image:url(hideThePain1.jpg);">HideThePain1</option>
-        </select>
+            <div id="user1vote" style="display: none">
+                <p>Vote for User1 submitted!</p>
+            </div>
 
-        <button type="button">Submit Vote</button>
-    </p>
+    </div>
+
+    <div>
+            <div id="user2photos">
+                <h3>User2:</h3>
+
+                <figure>
+                    <img src="img/hideThePain2.jpg" alt="hideThePain2">
+                    <figcaption>hideThePain2</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/hideThePain1.jpg" alt="hideThePain1">
+                    <figcaption>hideThePain1</figcaption>
+                </figure><br>
+
+
+                <div class="voteImg">
+                    <select>
+                        <option>hideThePain2</option>
+                        <option>hideThePain1</option>
+                    </select>
+
+                    <button type="button" onclick="submitVote('user2')">Submit Vote</button>
+                </div><br><br>
+
+            </div>
+
+            <div id="user2vote" style="display: none">
+                <p>Vote for User2 submitted!</p>
+            </div>
+
+    </div>
+
 
 
 
