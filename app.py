@@ -1,18 +1,35 @@
+import pymongo
 from flask import Flask, render_template, flash, request, url_for, redirect, session
 from forms.sign_in import SignInForm
-from pymongo import MongoClient
+from database import Database
+from models.user import *
 from werkzeug.utils import secure_filename
 import os
 
 app = Flask(__name__)
-client = MongoClient(host='localhost', port=63342)
-db = client.data
+
 
 app.config.from_object('config')
 
 
+db= Database().db
+#app.config mongo
+###########3
+#mongo=pymongo(app)
+
+print(db.collection_names())
 
 
+
+
+
+#client = MongoClient("mongodb://<dbuser>:<dbpassword>@ds123698.mlab.com:23698/dbdatabase")
+#db = client['dbdatabase']
+#user_records=db.user_records
+
+
+
+##
 
 
 
@@ -61,9 +78,10 @@ def sign_in():
         print('fdsafa')
         if not db.users.find_one({'username': sign_in_form.username.data}):
             user = User(sign_in_form.email.data, sign_in_form.username.data, sign_in_form.password.data)
+            print(user.username)
             db.users.insert_one(user.json())
-            session['username']= user.username
-            session['email']= user.email
+            #session['username']= user.username
+            #session['email']= user.email
             return render_template('view_results.html')
             #return redirect(url_for('index'))
 
@@ -77,17 +95,19 @@ def login_page():
     error = ''
     try:
         if request.method== "POST":
+            print('fdsafdsafsdsda')
             attempted_username = request.form['username']
             attempted_password= request.form['psw']
-            attempted_email = request.form['email']
+            #attempted_email = request.form['email']
 
             flash(attempted_username)
             flash(attempted_password)
 
+
             if  db.users.find_one({u'username':"{}".format(attempted_username),u'password':attempted_password}):
                 flash("found")
-                session['username'] = attempted_username
-                session['email'] = attempted_email
+                #session['username'] = attempted_username
+                #session['email'] = attempted_email
                 return redirect(url_for('view_results'))
             else:
                 error = "Not Valid Credentials. Try again."
