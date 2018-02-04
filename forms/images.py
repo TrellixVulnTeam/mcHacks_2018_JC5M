@@ -1,9 +1,6 @@
-class images:
-    def __init__(self, url, unique_id ,votes):
+class Images:
+    def __init__(self, url, votes=0):
         self.url = url
         self.votes = votes
-        self._id = unique_id
-
-
 
     #associate user with image id
