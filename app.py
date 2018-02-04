@@ -19,12 +19,12 @@ def index():
     return render_template('index.html')
     #return render_template('main_page.html', username=session['username'] if 'username' in session else None)
 
-@app.route('/voting/', methods = ['GET','POST'])
-def voter():
+@app.route('/view_results/', methods = ['GET','POST'])
+def view_results():
     """
     error = ''
     try:
-        if request.method== "POST":fdsafdasds
+        if request.method== "##POST":fdsafdasds
             attempted_username = request.form['username']
             attempted_password= request.form['psw']
             attempted_email = request.form['email']
@@ -47,7 +47,7 @@ def voter():
         return render_template("login.html", error= error)
 
 """
-    return render_template('main_page.html')
+    return render_template('view_results.html')
 
 @app.route('/sign_in/', methods=['GET', 'POST'])
 #SIGN-UP
@@ -84,7 +84,7 @@ def login_page():
                 flash("found")
                 session['username'] = attempted_username
                 session['email'] = attempted_email
-                return redirect(url_for('index'))
+                return redirect(url_for('view_results'))
             else:
                 error = "Not Valid Credentials. Try again."
 
@@ -96,7 +96,7 @@ def login_page():
 
     return render_template('login.html')
 
-@app.route('/upload_photo', methods = ['GET', 'POST'])
+@app.route('/upload_photo/', methods = ['GET', 'POST'])
 def upload_photo():
     """
     def upload_photo():
@@ -107,7 +107,7 @@ def upload_photo():
             filename = secure_filename(new_photo)
             new_photo.save(os.path.join(app.config['Photos'], filename))
     """
-
+    return render_template('upload_photo.html')
 
 if __name__ == '__main__':
     app.run()
