@@ -59,7 +59,7 @@ def sign_in():
         #if request.method == "POST" and sign_in_form.validate_on_submit():
         print('fdsafa')
         if not db.users.find_one({'username': sign_in_form.username.data}):
-            user = User(sign_in_form.email.data, sign_in_form.username.data, sign_in_form.password.data,im)
+            user = User(sign_in_form.email.data, sign_in_form.username.data, sign_in_form.password.data)
             print(user.username)
             db.users.insert_one(user.json())
             session['username']= user.username

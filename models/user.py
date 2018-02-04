@@ -1,8 +1,8 @@
 from random import random
-from forms.images import  images
+from forms.images import images
 
 class User():
-    def __init__(self, email, username, password, images):
+    def __init__(self, email, username, password, images=None):
         """
 
         :param email: str
